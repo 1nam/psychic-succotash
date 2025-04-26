@@ -101,6 +101,42 @@
       transition: opacity 1s ease;
     }
   </style>
+  <style>
+  #playPauseBtn {
+    background-color: #00ff00; /* Bright green */
+    border: none;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00ff00;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  #playPauseBtn:hover {
+    background-color: #00cc00;
+    box-shadow: 0 0 20px #00ff00;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 10px #00ff00;
+    }
+    50% {
+      box-shadow: 0 0 30px #00ff00;
+    }
+    100% {
+      box-shadow: 0 0 10px #00ff00;
+    }
+  }
+</style>
+
 </head>
 <body>
 
@@ -127,6 +163,13 @@
       button.classList.remove('glow');
     }
   });
+  button.addEventListener('click', function() {
+  if (audio.paused) {
+    audio.play();
+    button.style.display = 'none'; // hides button after music starts
+  }
+});
+
 </script>
 
   <a href="#journal">Visit My Journal</a>

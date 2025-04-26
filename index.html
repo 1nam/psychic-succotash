@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychic Succotash</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      font-size: 3rem;
+      margin-top: 50px;
+      animation: rainbow 5s infinite;
+    }
+
+    @keyframes rainbow {
+      0% { color: orange; }
+      25% { color: yellow; }
+      50% { color: limegreen; }
+      75% { color: cyan; }
+      100% { color: violet; }
+    }
+
+    a {
+      color: #00ff00;
+      text-decoration: none;
+      font-size: 1.5rem;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section.journal {
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: left;
+      padding: 20px;
+      background: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    .entry {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #444;
+    }
+
+    .entry h3 {
+      color: #00ff00;
+      margin-bottom: 5px;
+    }
+
+    .entry p {
+      color: #ccc;
+    }
+
+    footer {
+      margin-top: 100px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+      text-shadow: 0 0 8px #0f0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 8px #0f0; }
+      50% { text-shadow: 0 0 16px #0f0; }
+      100% { text-shadow: 0 0 8px #0f0; }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <audio src="planet-code.mp3" autoplay loop></audio>
+
+  <header>Welcome to Psychic Succotash</header>
+
+  <a href="#journal">Visit My Journal</a>
+
+  <section class="journal" id="journal">
+    <h2>My Journal</h2>
+
+    <div class="entry">
+      <h3>April 26, 2025</h3>
+      <p>Started adding journal features to my one-page site. Excited to keep learning and building every day!</p>
+    </div>
+
+    <div class="entry">
+      <h3>April 25, 2025</h3>
+      <p>Built my first one-page GitHub Pages website! Loving the old-school vibes mixed with modern smoothness.</p>
+    </div>
+
+    <div class="entry">
+      <h3>April 24, 2025</h3>
+      <p>Getting back into coding after a long break. Feels great to make real progress and have fun doing it.</p>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2025 Psychic Succotash. Built with passion and pixels.
+  </footer>
+
+</body>
+</html>

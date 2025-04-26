@@ -4,4 +4,4 @@ My learning journal blog
 > Enjoy ~ your visit.
 
 # Click the Dot
-[.]([https://1nam.github.io/website/](https://1nam.github.io/psychic-succotash/))
+[.](https://1nam.github.io/psychic-succotash/)

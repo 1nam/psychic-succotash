@@ -104,21 +104,30 @@
 </head>
 <body>
 
-   <!-- Audio element -->
+  <!-- Hidden audio player -->
+ <audio id="myAudio" src="no-copyright-music-upbeat-happy-328566.mp3"></audio>
 
-<audio id="background-music" src="no-copyright-music-upbeat-happy-328566.mp3" autoplay loop></audio>
+<button id="playPauseBtn">Play Music</button>
 
-  <head>
-  <meta charset="UTF-8">
-  <title>Welcome to Psychic Succotash</title>
-  
-  <style>
-    audio {
-      display: none;
+<script>
+  const audio = document.getElementById('myAudio');
+  const button = document.getElementById('playPauseBtn');
+
+  // Set volume low
+  audio.volume = 0.1;
+
+  button.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play();
+      button.textContent = 'Pause Music';
+      button.classList.add('glow');
+    } else {
+      audio.pause();
+      button.textContent = 'Play Music';
+      button.classList.remove('glow');
     }
-  </style>
-
-</head>
+  });
+</script>
 
   <a href="#journal">Visit My Journal</a>
 

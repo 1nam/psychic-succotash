@@ -83,6 +83,23 @@
     audio {
       display: none;
     }
+
+    #terminal {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #00ff00;
+      font-size: 1rem;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
   </style>
 </head>
 <body>
@@ -117,5 +134,26 @@
     &copy; 2025 Psychic Succotash. Built with passion and pixels.
   </footer>
 
+  <div id="terminal" style="display: none;">
+    <pre>> Welcome to the Shell, Cool Bean.</pre>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const terminal = document.getElementById('terminal');
+      setTimeout(() => {
+        terminal.style.display = 'block';
+        setTimeout(() => {
+          terminal.style.opacity = 1;
+        }, 100);
+        setTimeout(() => {
+          terminal.style.opacity = 0;
+          setTimeout(() => {
+            terminal.style.display = 'none';
+          }, 1000);
+        }, 4000);
+      }, 2000);
+    });
+  </script>
 </body>
 </html>

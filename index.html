@@ -1,284 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psychic Succotash</title>
+  <meta charset="utf-8">
+  <title>Home - my_site</title>
   <style>
-  body {
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
-    background-color: #1a1a1a; /* dark grey background */
-    color: white;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-</style>
-
-  <style>
-    body {
-      background-color: #1e1e1e;
-      color: white;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      font-size: 3rem;
-      margin-top: 50px;
-      animation: rainbow 5s infinite;
-    }
-
-    @keyframes rainbow {
-      0% { color: orange; }
-      25% { color: yellow; }
-      50% { color: limegreen; }
-      75% { color: cyan; }
-      100% { color: violet; }
-    }
-
-    a {
-      color: #00ff00;
-      text-decoration: none;
-      font-size: 1.5rem;
-      display: inline-block;
-      margin-top: 20px;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    section.journal {
-      max-width: 600px;
-      margin: 50px auto;
-      text-align: left;
-      padding: 20px;
-      background: #2a2a2a;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00ff00;
-    }
-
-    .entry {
-      margin-bottom: 30px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #444;
-    }
-
-    .entry h3 {
-      color: #00ff00;
-      margin-bottom: 5px;
-    }
-
-    .entry p {
-      color: #ccc;
-    }
-
-    footer {
-      margin-top: 100px;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #ccc;
-      text-shadow: 0 0 8px #0f0;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { text-shadow: 0 0 8px #0f0; }
-      50% { text-shadow: 0 0 16px #0f0; }
-      100% { text-shadow: 0 0 8px #0f0; }
-    }
-
-    audio {
-      display: none;
-    }
-
-    #terminal {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #000;
-      color: #0f0;
-      font-family: 'Courier New', Courier, monospace;
-      padding: 15px 25px;
-      border-radius: 8px;
-      box-shadow: 0 0 20px #00ff00;
-      font-size: 1rem;
-      z-index: 1000;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-  </style>
-  <style>
-  #playPauseBtn {
-    background-color: #00ff00; /* Bright green */
-    border: none;
-    color: black;
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    margin: 20px auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #00ff00;
-    cursor: pointer;
-    animation: pulse 2s infinite;
-    transition: background-color 0.3s, box-shadow 0.3s;
-  }
-
-  #playPauseBtn:hover {
-    background-color: #00cc00;
-    box-shadow: 0 0 20px #00ff00;
-  }
-
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 10px #00ff00;
-    }
-    50% {
-      box-shadow: 0 0 30px #00ff00;
-    }
-    100% {
-      box-shadow: 0 0 10px #00ff00;
-    }
-  }
-    /* Arctic Vault Contributor Badge */
-.vault-badge {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vault-badge img {
-  width: 40px;
-  margin-right: 10px;
-}
-
-.vault-badge p {
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+  padding: 50px;
+  min-height: 100vh;
   margin: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
+  transition: 0.5s;
+
 }
 
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  margin: 20px;
+}
+
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
 </style>
-
-</head>
-<body>
-<!-- Arctic Vault Contributor Badge -->
-<div class="vault-badge">
-  <img src="https://github.githubassets.com/assets/arctic-code-vault-contributor-default-df8d74122a06.png" alt="Arctic Code Vault Contributor" />
-  <p>Arctic Code Vault Contributor</p>
-</div>
-
-
-
-  <!-- Hidden audio player -->
- <audio id="myAudio" src="no-copyright-music-upbeat-happy-328566.mp3"></audio>
-
-<button id="playPauseBtn">Play Music</button>
 
 <script>
-  const audio = document.getElementById('myAudio');
-  const button = document.getElementById('playPauseBtn');
+function toggleMode() {
+  document.body.classList.toggle('dark');
+}
 
-  // Set volume low
-  audio.volume = 0.1;
+function detectUserStuff() {
+  let os = "Unknown OS";
+  let browser = "Unknown Browser";
+  const userAgent = navigator.userAgent;
 
-  button.addEventListener('click', function() {
-    if (audio.paused) {
-      audio.play();
-      button.textContent = 'Pause Music';
-      button.classList.add('glow');
-    } else {
-      audio.pause();
-      button.textContent = 'Play Music';
-      button.classList.remove('glow');
-    }
-  });
-  button.addEventListener('click', function() {
-  if (audio.paused) {
-    audio.play();
-    button.style.display = 'none'; // hides button after music starts
-  }
-});
+  // Detect OS
+  if (userAgent.indexOf("Win") != -1) os = "Windows";
+  else if (userAgent.indexOf("Mac") != -1) os = "MacOS";
+  else if (userAgent.indexOf("X11") != -1) os = "Unix";
+  else if (userAgent.indexOf("Linux") != -1) os = "Linux";
+  else if (userAgent.indexOf("Android") != -1) os = "Android";
+  else if (/iPhone|iPad|iPod/.test(userAgent)) os = "iOS";
 
+  // Detect Browser
+  if (userAgent.indexOf("Firefox") != -1) browser = "Firefox";
+  else if (userAgent.indexOf("Edg") != -1) browser = "Edge";
+  else if (userAgent.indexOf("Chrome") != -1) browser = "Chrome";
+  else if (userAgent.indexOf("Safari") != -1 && userAgent.indexOf("Chrome") == -1) browser = "Safari";
+
+  document.getElementById("os-info").innerHTML = "Nice OS! You're running <b>" + os + "</b>.";
+  document.getElementById("browser-info").innerHTML = "Great choice in browser! You're using <b>" + browser + "</b>.";
+}
+
+// Run it when page loads
+window.onload = detectUserStuff;
 </script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <a href="#journal">Visit My Journal</a>
+  <button onclick="toggleMode()">🌙/☀️ Switch Mode</button>
 
-  <section class="journal" id="journal">
-    <h2>My Journal</h2>
+  <p id="os-info"></p>
+  <p id="browser-info"></p>
 
-    <div class="entry">
-      <h3>April 26, 2025</h3>
-      <p>Started adding journal features to my one-page site. Excited to keep learning and building every day!</p>
-    </div>
-
-    <div class="entry">
-      <h3>April 25, 2025</h3>
-      <p>Built my first one-page GitHub Pages website! Loving the old-school vibes mixed with modern smoothness.</p>
-    </div>
-
-    <div class="entry">
-      <h3>April 24, 2025</h3>
-      <p>Getting back into coding after a long break. Feels great to make real progress and have fun doing it.</p>
-    </div>
-
-  </section>
-
+  <h1>Welcome!</h1>
+  <p>Thanks for visiting!</p>
+  
   <footer>
-    &copy; 2025 Psychic Succotash. Built with passion and pixels.
-    <br>
-    Music by <a href="https://pixabay.com/users/hitslab-47305729/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=328566">Ievgen Poltavskyi</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=328566">Pixabay</a>
-  </footer>
-
-  <div id="terminal" style="display: none;">
-    <pre>> Welcome to the Shell, Cool Bean.</pre>
-  </div>
-
-  <script>
-    window.addEventListener('load', () => {
-      const terminal = document.getElementById('terminal');
-      setTimeout(() => {
-        terminal.style.display = 'block';
-        setTimeout(() => {
-          terminal.style.opacity = 1;
-        }, 100);
-        setTimeout(() => {
-          terminal.style.opacity = 0;
-          setTimeout(() => {
-            terminal.style.display = 'none';
-          }, 1000);
-        }, 4000);
-      }, 2000);
-    });
-  </script>
+  <p>Made with the help of <a href="https://chat.openai.com" target="_blank" style="color: #4CAF50; text-decoration: none;">ChatGPT</a></p>
+</footer>
 </body>
 </html>

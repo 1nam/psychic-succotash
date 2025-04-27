@@ -10,9 +10,10 @@ add your own text,
 --------------------
 super easy works On or offline 
 ---------------------------------
-simply run the bash script in linux terminal or gitbash for windows 
+simply run the dark_bash_auto.sh script in linux terminal or gitbash for windows 
 puts everything in one folder ready to use note: index.html is your main page
 simply add all 3 pages on your github repo the pages link to each other 
+no api or any library to link to just super simple.
 
 having issues just ask Chatgpt, 
 i did this with the help of --> ("https://chat.openai.com")

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>About - my_site</title>
+  <style>
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+  padding: 50px;
+  min-height: 100vh;
+  margin: 0;
+  transition: 0.5s;
+
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  margin: 20px;
+}
+
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle('dark');
+}
+
+function detectUserStuff() {
+  let os = "Unknown OS";
+  let browser = "Unknown Browser";
+  const userAgent = navigator.userAgent;
+
+  // Detect OS
+  if (userAgent.indexOf("Win") != -1) os = "Windows";
+  else if (userAgent.indexOf("Mac") != -1) os = "MacOS";
+  else if (userAgent.indexOf("X11") != -1) os = "Unix";
+  else if (userAgent.indexOf("Linux") != -1) os = "Linux";
+  else if (userAgent.indexOf("Android") != -1) os = "Android";
+  else if (/iPhone|iPad|iPod/.test(userAgent)) os = "iOS";
+
+  // Detect Browser
+  if (userAgent.indexOf("Firefox") != -1) browser = "Firefox";
+  else if (userAgent.indexOf("Edg") != -1) browser = "Edge";
+  else if (userAgent.indexOf("Chrome") != -1) browser = "Chrome";
+  else if (userAgent.indexOf("Safari") != -1 && userAgent.indexOf("Chrome") == -1) browser = "Safari";
+
+  document.getElementById("os-info").innerHTML = "Nice OS! You're running <b>" + os + "</b>.";
+  document.getElementById("browser-info").innerHTML = "Great choice in browser! You're using <b>" + browser + "</b>.";
+}
+
+// Run it when page loads
+window.onload = detectUserStuff;
+</script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <button onclick="toggleMode()">🌙/☀️ Switch Mode</button>
+
+  <p id="os-info"></p>
+  <p id="browser-info"></p>
+
+  <h1>About Me</h1>
+  <p>This is the about page.</p>
+  
+  <footer>
+  <p>Made with the help of <a href="https://chat.openai.com" target="_blank" style="color: #4CAF50; text-decoration: none;">ChatGPT</a></p>
+</footer>
+</body>
+</html>
